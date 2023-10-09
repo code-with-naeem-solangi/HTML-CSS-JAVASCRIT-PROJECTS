@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE CALCULATOR</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: rgba(23, 153, 56, 0.411);
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        div {
+            width: 400px;
+            text-align: center;
+            margin-top: 100px;
+            margin-left: 30%;
+            background-color: rgb(219, 214, 245);
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        button {
+            background-color: rgba(32, 60, 218, 0.384);
+            margin-left: 8px;
+            border: none;
+            color: black;
+            width: 60px;
+            height: 45px;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-radius: 7px;
+        }
+
+        input {
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            font-size: 25px;
+            outline: none;
+        }
+
+        .specil {
+            background-color: rgb(98, 98, 212);
+            border: none;
+            outline: 0px;
+        }
+        input:hover{
+            outline: none;
+        }
+        .specil:hover {
+            outline: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>SIMPLE CALCULATOR</h1>
+        <br>
+        <input type="number" placeholder="NUMBER 1" id="num_1">
+        <br> <br>
+        <input type="number" placeholder="NUMBER 2" id="num_2">
+        <br><br>
+        <button id="plus">+</button>
+        <button id="mines">-</button>
+        <button id="multi">x</button>
+        <button id="divide">÷</button>
+        <button id="clear">C</button>
+        <br><br>
+        <input class="specil" type="number" readonly id="result">
+    </div>
+</body>
+<script>
+    var num1 = document.getElementById("num_1")
+    var num2 = document.getElementById("num_2")
+    var result = document.getElementById("result")
+
+    
+
+    var fP = document.getElementById("plus").addEventListener("click", function () {
+      alert("FIRST NUMBER & SECOND NUMBER IS PLUS")
+      result.value = parseInt(num1.value)+parseInt(num2.value)
+    })
+    var fM = document.getElementById("mines").addEventListener("click", function () {
+        alert("FIRST NUMBER & SECOND NUMBER IS MINES")
+        result.value = parseInt(num1.value)-parseInt(num2.value)
+    })
+    var fMul = document.getElementById("multi").addEventListener("click", function () {
+        alert("FIRST NUMBER & SECOND NUMBER IS MULTIPLY")
+        result.value = parseInt(num1.value)*parseInt(num2.value)
+    })
+    var fD = document.getElementById("divide").addEventListener("click", function () {
+        alert("FIRST NUMBER & SECOND NUMBER IS DEVIDE")
+        result.value = parseInt(num1.value)/parseInt(num2.value)
+    })
+    var fC = document.getElementById("clear").addEventListener("click", function () {
+        alert("ALL NUMBERS IS CLEAR")
+        result.value = 0;
+        num_1.value = 0;
+        num_2.value = 0;
+    })
+    
+
+</script>
+
+</html>
