@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APLICATION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            background-color: chartreuse;
+            font-family: 'Courier New', Courier, monospace;
+     }
+     input{
+        border: none;
+        height: 40px;
+        width: 400px;
+        text-align: center;
+        font-size: large;
+        
+        
+    }
+    button{
+        border: none;
+        cursor: pointer;
+        height: 40px;
+        margin-left: 0px;
+
+       
+    }
+    
+    input:focus-visible{
+    outline: 0;
+}
+h1{
+    margin-top: 100px;
+    text-align: center;
+    
+}
+section{
+    margin-left: 33%;
+    
+}
+.text ol {
+    height: 40px;
+    /* margin-left: 65px; */
+    position: relative;
+    background-color:rgb(219 158 169);
+    width: 365px;
+    font-size: 25px;
+    padding-top: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(2, 1, 0);
+    padding-right: 116px;
+    padding-left: 5px;
+}
+.text ol i{
+position: absolute;
+right: 10px;
+cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        
+        <h1>TO-DO LIST <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h1> <br>
+        <h1 style="margin-top: 0px;">MUHAMMAD NAEEM SOLANGI</h1>
+    <section>
+        <!-- <button onclick="remove()">RESET</button> -->
+        <input id="input" type="text" placeholder="ADD YOUR LIST">
+        <button onclick="addNwList()">ADD LIST</button>
+        <div class="text">
+
+        </div>
+    </section>
+    </div>
+</body>
+<script>
+
+    // function remove(){
+    //     var masege = "YOUR LIST REMOVE";
+    //   var remove =  document.getElementById("input").innerHTML=masege;
+    // console.log(remove)
+    // }
+    
+    // var list = [];
+    // function addNwList(listcreate) {
+    // let listAd = document.getElementById("input");
+    // let value =listAd.value;
+    // if (value) {
+    //     list.push(value)
+    //     listAd.value = " ";
+    //     // newList (value)
+    //         var orderL = document.getElementById("orderlist");
+    //         var chaidOL = document.createElement("li");
+    //         var node = document.createTextNode(listcreate)
+    //       var fainl =  orderL.appendChild(chaidOL);
+    //         var orderL = document.getElementById("orderlist").innerHTML=fainl;
+    //         console.log(orderL,' fainal')
+    // }else{
+    //     alert("First You Enter A List")
+    // }
+    // console.log(list , 'list')
+    // }
+
+    // function newList(listcreate) {
+    // //     var chaidOL = document.createElement("li");
+    // //     var node = document.createTextNode(listcreate)
+    // //   var fainl =  orderL.appendChild(chaidOL);
+
+    // }
+ var input = document.getElementById("input");
+ 
+ var clasSelect = document.querySelector(".text");
+
+ function addNwList() {
+    if (input.value) {
+        let ol = document.createElement("ol");
+        ol.innerHTML=`${input.value} <i class="fa fa-trash" aria-hidden="true"></i>`;
+        
+        clasSelect.appendChild(ol)
+        input.value=" "
+        ol.querySelector("i").addEventListener("click", end);
+        function end() {
+            ol.remove()
+        }
+        
+    }else{
+        alert("FIRST YOU HAVE TYPE A LIST")
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
