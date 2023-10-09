@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE SLIDEING</title>
+
+    <style>
+        .imageSlides {
+            display: none
+        }
+
+        img {
+            margin: auto;
+            display: block;
+            width: 100%;
+        }
+
+        /* Our main images-slideshow container */
+        .images-slideshow {
+            max-width: 612px;
+            position: relative;
+            margin: auto;
+        }
+
+        /*Style for ">" next and "<" previous buttons */
+        .slider-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 8px 16px;
+            margin-top: -22px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+
+        /* setting the position of the previous button towards left */
+        .previous {
+            left: 2%;
+        }
+
+        /* setting the position of the next button towards right */
+        .next {
+            right: 2%;
+        }
+
+        /* On hover, adding a background color */
+        .previous:hover,
+        .next:hover {
+            color: rgb(255, 253, 253);
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="images-slideshow">
+        <div class="imageSlides fade">
+            <img src="./15f6a3aac562ee0fadbbad3d4cdf47bc.jpg">
+        </div>
+        <div class="imageSlides fade">
+            <img src="./360_F_547978128_vqEEUYBr1vcAwfRAqReZXTYtyawpgLcC.jpg">
+        </div>
+        <div class="imageSlides fade">
+            <img src="./forest-landscape_71767-127.avif">
+        </div>
+        <a class="slider-btn previous" onclick="setSlides(-1)">❮</a>
+        <a class="slider-btn next" onclick="setSlides(1)">❯</a>
+    </div>
+
+
+</body>
+
+<script>
+    var currentIndex = 1;
+    displaySlides(currentIndex);
+
+    function setSlides(num) {
+        displaySlides(currentIndex += num);
+    }
+
+    function displaySlides(num) {
+        var x;
+        var slides = document.getElementsByClassName("imageSlides");
+        if (num > slides.length) { currentIndex = 1 }
+        if (num < 1) { currentIndex = slides.length }
+        for (x = 0; x < slides.length; x++) {
+            slides[x].style.display = "none";
+        }
+        slides[currentIndex - 1].style.display = "block";
+    }
+
+
+</script>
+
+</html>
